@@ -49,7 +49,7 @@ export default class PaymentList extends React.Component {
       mode: 'cors',
       body: JSON.stringify({
         token: resultToken,
-        Status: status
+        status: status
       }),
     });
     // .then(res => res.json())
@@ -98,7 +98,7 @@ export default class PaymentList extends React.Component {
           <div style={{flex: 1, textAlign: 'right'}}>{order.Amount}</div>
         </div>
 
-        <div style={{backgroundColor: assignColor, padding: 10}}>
+        <div style={{backgroundColor: assignColor, padding: 10}} onTouchTap={()=>{this.props.onSelect(order.WalletOrderNo)}} >
           <span style={{display: 'block', textAlign: 'center', color:'#FFF'}}>{typeTitle}</span>
         </div>
       </div>

@@ -1,15 +1,10 @@
 import React from 'react';
 import reactDom from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {Card, CardTitle, CardText} from 'material-ui/Card';
+import PaymentRouter from './component/PaymentRouter'
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 import indexStyle from './walletIndex.css';
 import 'whatwg-fetch';
-import AddMoney from './component/AddMoney'
-import PaymentList from './component/PaymentList'
-
 
 
 class App extends React.Component {
@@ -41,10 +36,8 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div style={ {...this.fadeinStyle, paddingLeft: 20, paddingRight: 20 } } className={indexStyle.fadeIn} >
-          <AddMoney />
-          <PaymentList />
-
+        <div style={ {...this.fadeinStyle} } className={indexStyle.fadeIn} >
+          <PaymentRouter/>
         </div>
       </MuiThemeProvider>
     )
