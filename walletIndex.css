@@ -1,0 +1,67 @@
+.selected_green {
+    background-color: #B2DFDB ;
+}
+
+.selected_grey {
+    border: #B0BEC5 solid 2px;
+}
+
+.selectedCard {
+    border: #B2DFDB solid 2px;
+}
+
+.card {
+    padding: 10px 20px;
+    margin-bottom: 15px;
+}
+
+html {
+    height: 100%;
+    color: #9E9E9E
+}
+
+div {
+    transition: border ease-in-out 0s ;
+}
+
+.RaisedButton_noRadius, .RaisedButton_noRadius div, .RaisedButton_noRadius button {
+    border-radius: 0 !important;
+}
+
+
+.strechHeightAnimation {
+    -o-transition: 0.4s height, 0.25s opacity, ease-in-out 0ms;
+    -moz-transition: 0.4s height, 0.25s opacity, ease-in-out 0ms;
+    -webkit-transition: 0.4s height, 0.25s opacity, ease-in-out 0ms;
+    transition: 0.4s height, 0.25s opacity, ease-in-out 0ms;
+}
+
+.progressSpin {
+    transform:translateY(-50%);
+    positions: 0 auto;
+}
+
+.positionCenter {
+    height: 100%;
+    width: 100%;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+
+
+.fadeIn {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}

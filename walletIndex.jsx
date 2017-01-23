@@ -8,7 +8,7 @@ import TextField from 'material-ui/TextField';
 import indexStyle from './walletIndex.css';
 import 'whatwg-fetch';
 import AddMoney from './component/AddMoney'
-
+import PaymentList from './component/PaymentList'
 
 
 
@@ -43,6 +43,7 @@ class App extends React.Component {
       <MuiThemeProvider>
         <div style={ {...this.fadeinStyle, paddingLeft: 20, paddingRight: 20 } } className={indexStyle.fadeIn} >
           <AddMoney />
+          <PaymentList />
 
         </div>
       </MuiThemeProvider>

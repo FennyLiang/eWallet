@@ -33,7 +33,7 @@ export default class AddMoney extends React.Component {
     })
   }
 
-  validationPrice(event) {
+  validationPrice() {
     if(this.state.selected == prices[prices.length-1]){
 
       const priceText = this.refs.targetVal.getValue();
