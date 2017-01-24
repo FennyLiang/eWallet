@@ -101,6 +101,7 @@ export default class PaymentInfo extends React.Component{
     let payDate = '';
     let dueDay = '';
 
+
     switch(order.status) {
       case 0:
         orderNo = `訂單編號： ${order.id}`;
@@ -110,6 +111,7 @@ export default class PaymentInfo extends React.Component{
             <div>{`金額： ${order.amount} 元`}</div>
             <div style={pageStyle.paymentInline}>{orderNo}</div>
             <div style={pageStyle.paymentInline}>{createTime}</div>
+            {this.showPayCode(this.state.order)}
           </div>
         );
       case 1:
@@ -120,6 +122,7 @@ export default class PaymentInfo extends React.Component{
             <div>{`金額： ${order.amount} 元`}</div>
             <div style={pageStyle.paymentInline}>{createTime}</div>
             <div style={pageStyle.paymentInline}>{payDate}</div>
+            {this.showPayCode(this.state.order)}
           </div>
         );
       case 2:
@@ -130,11 +133,46 @@ export default class PaymentInfo extends React.Component{
             <div>{`金額： ${order.amount} 元`}</div>
             <div style={pageStyle.paymentInline}>{createTime}</div>
             <div style={pageStyle.paymentInline}>{dueDay}</div>
+            {this.showPayCode(this.state.order)}
           </div>
         );
     }
-
   }
+
+  showPayCode(order){
+    let resultPayCode = '';
+    let barcodeImage= '';
+    switch(order.paymentType){
+      case "BARCODE":
+        barcodeImage = this.state.order.payCode.map((image) => { return (<div><img style={pageStyle.barCode} src={image} /></div>); })
+        return(
+          <div style={pageStyle.paymentBarcode} >
+            {barcodeImage}
+          </div>
+        );
+      case "VACC":
+        resultPayCode=`轉帳帳號：${order.payCode}`;
+        return(
+          <div style={pageStyle.paymentInline}>
+            {resultPayCode}
+          </div>
+        );
+      case "CVS":
+        resultPayCode=`超商繳費代碼：${order.payCode}`;
+        return(
+          <div style={pageStyle.paymentInline}>
+            {resultPayCode}
+          </div>
+        );
+      default:
+        return(
+          <div>
+            {resultPayCode}
+          </div>
+        );
+    }
+  }
+
 
 
   render(){
@@ -146,6 +184,7 @@ export default class PaymentInfo extends React.Component{
         <div>
           {this.showPaymentTitle(this.state.order)}
           {this.showPayDetail(this.state.order)}
+          {/*{this.showPayCode(this.state.order)}*/}
         </div>
       )
     }
