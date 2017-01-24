@@ -144,7 +144,7 @@ export default class PaymentInfo extends React.Component{
     let barcodeImage= '';
     switch(order.paymentType){
       case "BARCODE":
-        barcodeImage = this.state.order.payCode.map((image) => { return (<div><img style={pageStyle.barCode} src={image} /></div>); })
+        barcodeImage = this.state.order.payCode.map((image) => { return (<div style={pageStyle.barCodeWideDiv}><img style={pageStyle.barCode} src={image} /></div>); })
         return(
           <div style={pageStyle.paymentBarcode} >
             {barcodeImage}

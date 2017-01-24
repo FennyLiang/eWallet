@@ -23,10 +23,6 @@ class App extends React.Component {
   };
 
 
-  style =  {
-    padding: 20,
-    marginTop: 20,
-  };
 
   fadeinStyle = {
     animationDelay: 0.7,
