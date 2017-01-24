@@ -57,19 +57,95 @@ export default class PaymentInfo extends React.Component{
     this.selectedStatus();
   }
 
+  showPaymentTitle(order) {
+
+    let typeTitle = '';
+    let assignColor = '#b3b3b3';
+
+    const type = {
+      CVS: '超商付款',
+      BARCODE: '二維條碼付款',
+      VACC: 'ATM付款',
+    };
+
+
+    switch(order.status) {
+      case 0:
+        typeTitle = `請於${order.dueDate.substring(0,10)}完成繳款`;
+        assignColor = '#4ac6e8';
+        break;
+      case 1:
+        typeTitle = `已於${order.dueDate.substring(0,10)}完成繳款`;
+        assignColor = '#b3dece';
+        break;
+      case 2:
+        typeTitle = `已逾時`;
+        break;
+    }
+
+    return(
+      <div>
+        <h3 style={pageStyle.title}>{type[order.paymentType]}</h3>
+        <div style={{ backgroundColor: assignColor, textAlign: 'center', color:'#FFF', padding: 10 }}>
+          {typeTitle}
+        </div>
+      </div>
+    )
+
+  }
+
+  //列出付款詳細資訊
+  showPayDetail(order) {
+    let orderNo = '';
+    let createTime = '';
+    let payDate = '';
+    let dueDay = '';
+
+    switch(order.status) {
+      case 0:
+        orderNo = `訂單編號： ${order.id}`;
+        createTime = `建立時間： ${order.createDate.substring(0,16)}`;
+        return(
+          <div style={pageStyle.paymentInfo}>
+            <div>{`金額： ${order.amount} 元`}</div>
+            <div style={pageStyle.paymentInline}>{orderNo}</div>
+            <div style={pageStyle.paymentInline}>{createTime}</div>
+          </div>
+        );
+      case 1:
+        createTime = `建立時間： ${order.createDate.substring(0,16)}`;
+        payDate = `繳費時間： ${order.payTime.substring(0,16)}`;
+        return(
+          <div style={pageStyle.paymentInfo}>
+            <div>{`金額： ${order.amount} 元`}</div>
+            <div style={pageStyle.paymentInline}>{createTime}</div>
+            <div style={pageStyle.paymentInline}>{payDate}</div>
+          </div>
+        );
+      case 2:
+        createTime = `建立時間： ${order.createDate.substring(0,16)}`;
+        dueDay = `截止時間： ${order.dueDate.substring(0,16)}`;
+        return(
+          <div style={pageStyle.paymentInfo}>
+            <div>{`金額： ${order.amount} 元`}</div>
+            <div style={pageStyle.paymentInline}>{createTime}</div>
+            <div style={pageStyle.paymentInline}>{dueDay}</div>
+          </div>
+        );
+    }
+
+  }
 
 
   render(){
 
     if(this.state.order == null){
-      return <div>{`載入中`}</div>
+      return <div>{`載入中...`}</div>
     } else {
       return (
         <div>
-          <h3 style={pageStyle.title}>超商付款</h3>
-          <div style={{ backgroundColor: '#4ac6e8', textAlign: 'center', color:'#FFF', padding: 10 }}>
-            {`請於${this.state.order.DueDate.substring(0,10)}完成繳款`}
-          </div>
+          {this.showPaymentTitle(this.state.order)}
+          {this.showPayDetail(this.state.order)}
         </div>
       )
     }

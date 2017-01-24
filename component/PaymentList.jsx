@@ -76,13 +76,13 @@ export default class PaymentList extends React.Component {
     // type.CVS
     // type['CVS']
 
-    switch(order.Status){
+    switch(order.status){
       case 0:
-        typeTitle = `請於${order.DueDate.substring(0,10)}完成繳款`;
+        typeTitle = `請於${order.dueDate.substring(0,10)}完成繳款`;
         assignColor = '#4ac6e8';
       break;
       case 1:
-        typeTitle = `已於${order.PayTime.substring(0,10)}完成繳款`;
+        typeTitle = `已於${order.dueDate.substring(0,10)}完成繳款`;
         assignColor = '#b3dece';
       break;
       case 2:
@@ -93,12 +93,12 @@ export default class PaymentList extends React.Component {
     return (
       <div style={{margin: '20px 0px 20px 0px', border: '#ccc solid 0.1px'}}>
         <div style={{display: 'flex', flexDirection: 'raw', padding: 10}}>
-          <div style={{flex: 1}}>{order.CreateDate.substring(0,10)}</div>
-          <div style={{flex: 1, textAlign: 'center'}}>{type[order.PaymentType]}</div>
-          <div style={{flex: 1, textAlign: 'right'}}>{order.Amount}</div>
+          <div style={{flex: 1}}>{order.createDate.substring(0,10)}</div>
+          <div style={{flex: 1, textAlign: 'center'}}>{type[order.paymentType]}</div>
+          <div style={{flex: 1, textAlign: 'right'}}>{order.amount}</div>
         </div>
 
-        <div style={{backgroundColor: assignColor, padding: 10}} onTouchTap={()=>{this.props.onSelect(order.WalletOrderNo)}} >
+        <div style={{backgroundColor: assignColor, padding: 10}} onTouchTap={()=>{this.props.onSelect(order.id)}} >
           <span style={{display: 'block', textAlign: 'center', color:'#FFF'}}>{typeTitle}</span>
         </div>
       </div>
@@ -131,33 +131,33 @@ export default class PaymentList extends React.Component {
   }
 }
 
-PaymentList.defaultProps = {
-  orders: [
-  {
-    "WalletOrderNo": "1484713602",
-    "Amount": 300,
-    "PaymentType": "CVS",
-    "DueDate": "2017/01/21 23:59:59",
-    "PayTime": "",
-    "Status": 0,
-    "CreateDate": "2017/01/18 12:26:42"
-  },
-  {
-    "WalletOrderNo": "1484713711",
-    "Amount": 300,
-    "PaymentType": "BARCODE",
-    "DueDate": "2017/01/21 23:59:59",
-    "PayTime": "",
-    "Status": 0,
-    "CreateDate": "2017/01/18 12:28:31"
-  },
-  {
-    "WalletOrderNo": "1484719506",
-    "Amount": 300,
-    "PaymentType": "VACC",
-    "DueDate": "2017/01/21 23:59:59",
-    "PayTime": "2017/01/18 17:11:05",
-    "Status": 1,
-    "CreateDate": "2017/01/18 14:05:06"
-  }
-]}
+// PaymentList.defaultProps = {
+//   orders: [
+//   {
+//     "WalletOrderNo": "1484713602",
+//     "Amount": 300,
+//     "PaymentType": "CVS",
+//     "DueDate": "2017/01/21 23:59:59",
+//     "PayTime": "",
+//     "Status": 0,
+//     "CreateDate": "2017/01/18 12:26:42"
+//   },
+//   {
+//     "WalletOrderNo": "1484713711",
+//     "Amount": 300,
+//     "PaymentType": "BARCODE",
+//     "DueDate": "2017/01/21 23:59:59",
+//     "PayTime": "",
+//     "Status": 0,
+//     "CreateDate": "2017/01/18 12:28:31"
+//   },
+//   {
+//     "WalletOrderNo": "1484719506",
+//     "Amount": 300,
+//     "PaymentType": "VACC",
+//     "DueDate": "2017/01/21 23:59:59",
+//     "PayTime": "2017/01/18 17:11:05",
+//     "Status": 1,
+//     "CreateDate": "2017/01/18 14:05:06"
+//   }
+// ]}
