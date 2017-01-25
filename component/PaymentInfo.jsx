@@ -1,5 +1,6 @@
 import React from 'react'
 import pageStyle from './css'
+import indexStyle from '../walletIndex.css';
 import 'whatwg-fetch';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -200,6 +201,7 @@ export default class PaymentInfo extends React.Component{
           {this.showPaymentTitle(this.state.order)}
           {this.showPayDetail(this.state.order)}
           <RaisedButton style={{position: 'fixed', bottom: 0, left: 0, width: '100%'}}
+                        className={indexStyle.RaisedButton_noRadius}
                         fullWidth={true}
                         primary={true}
                         label="返回"

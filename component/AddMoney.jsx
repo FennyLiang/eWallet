@@ -54,7 +54,7 @@ export default class AddMoney extends React.Component {
           <div style={{ width: parseInt((screen.width-40)/prices.length)-10,
                         height: parseInt((screen.height)/11), float: 'left',
                         paddingLeft: 5,paddingRight: 5, textAlign: 'center',
-                        display: 'inline-block'}}>
+                        }}>
             <Card style={this.state.selected == price ? selectedStyle : null}
                   onTouchTap={()=>{this.setState({selected: price})}}>
               <CardText>{price}</CardText>
