@@ -185,7 +185,8 @@ export default class PaymentInfo extends React.Component{
         <div>
           {this.showPaymentTitle(this.state.order)}
           {this.showPayDetail(this.state.order)}
-          <RaisedButton fullWidth={true}
+          <RaisedButton style={{position: 'fixed', bottom: 0, left: 0, width: '100%'}}
+                        fullWidth={true}
                         primary={true}
                         label="返回"
                         onTouchTap={()=>{this.props.backPage(1)}}/>
