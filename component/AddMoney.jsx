@@ -57,7 +57,7 @@ export default class AddMoney extends React.Component {
                         }}>
             <Card style={this.state.selected == price ? selectedStyle : null}
                   onTouchTap={()=>{this.setState({selected: price})}}>
-              <CardText>{price}</CardText>
+              <CardText style={{ lineHeight: '1.1em' }}>{price}</CardText>
             </Card>
           </div>
         )
