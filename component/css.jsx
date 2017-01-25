@@ -1,7 +1,7 @@
 
 
 const style = {
-  title: {textAlign: 'center'},
+  title: {textAlign: 'center', fontSize: 18},
   paymentInfo: { padding: 25 },
   paymentInline: {marginTop: 10},
   paymentBarcode: {marginTop: 20},

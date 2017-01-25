@@ -86,7 +86,10 @@ export default class PaymentInfo extends React.Component{
 
     return(
       <div>
-        <h3 style={pageStyle.title}>{type[order.paymentType]}</h3>
+        <p style={pageStyle.title}>
+          <img style={{...this.imageStyles}} src="./ic_wemo.png"/>{type[order.paymentType]}
+        </p>
+        {/*<h3 style={pageStyle.title}>{type[order.paymentType]}</h3>*/}
         <div style={{ backgroundColor: assignColor, textAlign: 'center', color:'#FFF', padding: 10 }}>
           {typeTitle}
         </div>
@@ -94,6 +97,17 @@ export default class PaymentInfo extends React.Component{
     )
 
   }
+
+
+  imageStyles ={
+    width: parseInt(screen.width/ 12),
+    height: parseInt(screen.width/ 12),
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    margin: 1,
+    verticalAlign: 'middle',
+  };
+
 
   //列出付款詳細資訊
   showPayDetail(order) {

@@ -13,9 +13,6 @@ class App extends React.Component {
     super(props);
     injectTapEventPlugin();
 
-    this.state = {
-
-    };
 
   }
   static propTypes = {

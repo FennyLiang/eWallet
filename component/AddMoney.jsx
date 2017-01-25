@@ -1,6 +1,6 @@
 import React from 'react';
 import pageStyle from './css'
-import {Card, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -16,8 +16,8 @@ export default class AddMoney extends React.Component {
       errorText:'',
       getToken: ''
     }
-
   }
+
 
   getParameterByName =(name, url) => {
     if (!url) {
@@ -51,7 +51,10 @@ export default class AddMoney extends React.Component {
 
     return prices.map((price) => {
         return (
-          <div style={{ width: parseInt((screen.width-40)/prices.length)-10, height: parseInt((screen.height)/11), float: 'left', paddingLeft: 5,paddingRight: 5, textAlign: 'center' }}>
+          <div style={{ width: parseInt((screen.width-40)/prices.length)-10,
+                        height: parseInt((screen.height)/11), float: 'left',
+                        paddingLeft: 5,paddingRight: 5, textAlign: 'center',
+                        display: 'inline-block'}}>
             <Card style={this.state.selected == price ? selectedStyle : null}
                   onTouchTap={()=>{this.setState({selected: price})}}>
               <CardText>{price}</CardText>
@@ -81,11 +84,12 @@ export default class AddMoney extends React.Component {
     }
   }
 
-
   render(){
+
     return(
       <div>
         <h3 style={pageStyle.title}>加值金額</h3>
+
         {this.createCards(prices)}
         {this.state.selected == prices[prices.length-1] ?
           <TextField fullWidth={true}
