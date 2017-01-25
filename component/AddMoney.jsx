@@ -47,11 +47,11 @@ export default class AddMoney extends React.Component {
   }
 
   createCards(prices) {
-    const selectedStyle = {border:'#4ac6e8 solid 2px'};
+    const selectedStyle = {border:'#4ac6e8 solid 1px'};
 
     return prices.map((price) => {
         return (
-          <div style={{ width: parseInt((screen.width-40)/prices.length)-10, float: 'left', padding: 5, textAlign: 'center' }}>
+          <div style={{ width: parseInt((screen.width-40)/prices.length)-10, height: parseInt((screen.height)/11), float: 'left', paddingLeft: 5,paddingRight: 5, textAlign: 'center' }}>
             <Card style={this.state.selected == price ? selectedStyle : null}
                   onTouchTap={()=>{this.setState({selected: price})}}>
               <CardText>{price}</CardText>

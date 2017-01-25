@@ -1,6 +1,7 @@
 import React from 'react'
 import pageStyle from './css'
 import 'whatwg-fetch';
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 export default class PaymentInfo extends React.Component{
@@ -184,6 +185,10 @@ export default class PaymentInfo extends React.Component{
         <div>
           {this.showPaymentTitle(this.state.order)}
           {this.showPayDetail(this.state.order)}
+          <RaisedButton fullWidth={true}
+                        primary={true}
+                        label="返回"
+                        onTouchTap={()=>{}}/>
           {/*{this.showPayCode(this.state.order)}*/}
         </div>
       )

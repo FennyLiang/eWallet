@@ -13,7 +13,7 @@ export default class PaymentRouter extends React.Component{
       pageState: 1,
       orderId:''
     };
-    this.changePageState = this.changePageState.bind(this)
+    this.changePageState = this.changePageState.bind(this);
     console.log(this)
   }
 
@@ -23,13 +23,14 @@ export default class PaymentRouter extends React.Component{
   }
 
 
+
   render(){
 
    switch (this.state.pageState) {
      case 1:
        return <PaymentPageOne changePageState={this.changePageState}/>;
      case 2:
-       return <PaymentInfo showInfo={this.state.orderId}/>;
+       return <PaymentInfo showInfo={this.state.orderId} />;
 
    }
   }
