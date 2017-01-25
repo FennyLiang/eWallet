@@ -188,7 +188,7 @@ export default class PaymentInfo extends React.Component{
           <RaisedButton fullWidth={true}
                         primary={true}
                         label="返回"
-                        onTouchTap={()=>{}}/>
+                        onTouchTap={()=>{this.props.backPage(1)}}/>
           {/*{this.showPayCode(this.state.order)}*/}
         </div>
       )

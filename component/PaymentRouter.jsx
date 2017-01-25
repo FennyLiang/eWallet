@@ -14,6 +14,7 @@ export default class PaymentRouter extends React.Component{
       orderId:''
     };
     this.changePageState = this.changePageState.bind(this);
+    this.props.backPageOne = this.backPageOne.bind(this)
     console.log(this)
   }
 
@@ -22,7 +23,9 @@ export default class PaymentRouter extends React.Component{
     this.setState({pageState: page, orderId: orderId});
   }
 
-
+  backPageOne(page) {
+    this.setState({pageState: page});
+  }
 
   render(){
 
@@ -30,7 +33,7 @@ export default class PaymentRouter extends React.Component{
      case 1:
        return <PaymentPageOne changePageState={this.changePageState}/>;
      case 2:
-       return <PaymentInfo showInfo={this.state.orderId} />;
+       return <PaymentInfo showInfo={this.state.orderId} backPage={this.props.backPageOne}/>;
 
    }
   }
