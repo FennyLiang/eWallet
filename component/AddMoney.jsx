@@ -70,7 +70,7 @@ export default class AddMoney extends React.Component {
 
       const priceText = this.refs.targetVal.getValue();
 
-      if(parseInt(priceText) < 300) {
+      if(priceText === '' || parseInt(priceText, 10) < 300) {
         this.setState({errorText : '請輸入300元以上金額'});
       }else {
         this.setState({selected : priceText});
