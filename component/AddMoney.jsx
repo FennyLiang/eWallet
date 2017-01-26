@@ -14,7 +14,7 @@ export default class AddMoney extends React.Component {
     this.state={
       selected: prices[0],
       errorText:'',
-      getToken: ''
+      getToken: '',
     }
   }
 
@@ -47,17 +47,17 @@ export default class AddMoney extends React.Component {
   }
 
   createCards(prices) {
-    const selectedStyle = {border:'#4ac6e8 solid 1px'};
+    const selectedStyle = {border:'#4ac6e8 solid 1px', color: '#555555'};
 
     return prices.map((price) => {
         return (
           <div style={{ width: parseInt((screen.width-40)/prices.length)-10,
                         height: parseInt((screen.height)/11), float: 'left',
                         paddingLeft: 5,paddingRight: 5, textAlign: 'center',
-                        }}>
-            <Card style={this.state.selected == price ? selectedStyle : null}
+                      }}>
+            <Card style={this.state.selected == price ? selectedStyle : ''}
                   onTouchTap={()=>{this.setState({selected: price})}}>
-              <CardText>{price}</CardText>
+              <CardText style={{ lineHeight: '1.1em', paddingBottom: 0}}>{price}</CardText>
             </Card>
           </div>
         )
@@ -68,9 +68,10 @@ export default class AddMoney extends React.Component {
 
     if(this.state.selected == prices[prices.length-1]){
 
+
       const priceText = this.refs.targetVal.getValue();
 
-      if(parseInt(priceText) < 300) {
+      if(parseInt(priceText, 10) < 300 || priceText === '') {
         this.setState({errorText : '請輸入300元以上金額'});
       }else {
         this.setState({selected : priceText});

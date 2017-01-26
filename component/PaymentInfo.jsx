@@ -206,7 +206,6 @@ export default class PaymentInfo extends React.Component{
                         primary={true}
                         label="返回"
                         onTouchTap={()=>{this.props.backPage(1)}}/>
-          {/*{this.showPayCode(this.state.order)}*/}
         </div>
       )
     }
