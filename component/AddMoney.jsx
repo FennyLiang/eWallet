@@ -47,17 +47,17 @@ export default class AddMoney extends React.Component {
   }
 
   createCards(prices) {
-    const selectedStyle = {border:'#4ac6e8 solid 1px', color: '#555555'};
+    const selectedStyle = {border:'#4ac6e8 solid 1px'};
 
     return prices.map((price) => {
         return (
           <div style={{ width: parseInt((screen.width-40)/prices.length)-10,
                         height: parseInt((screen.height)/11), float: 'left',
                         paddingLeft: 5,paddingRight: 5, textAlign: 'center',
-                      }}>
+                        }}>
             <Card style={this.state.selected == price ? selectedStyle : ''}
                   onTouchTap={()=>{this.setState({selected: price})}}>
-              <CardText style={{ lineHeight: '1.1em', paddingBottom: 0}}>{price}</CardText>
+              <CardText style={{ lineHeight: '1.1em', paddingBottom: 0}} color={'#555555'}>{price}</CardText>
             </Card>
           </div>
         )
@@ -96,6 +96,7 @@ export default class AddMoney extends React.Component {
           <TextField fullWidth={true}
                      ref="targetVal"
                      hintText="請輸入300元以上加值金額"
+                     floatingLabelStyle={{color: '#555555'}}
                      errorText={this.state.errorText}/> : ''}
         <RaisedButton fullWidth={true}
                       primary={true}
