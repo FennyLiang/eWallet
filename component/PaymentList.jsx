@@ -117,12 +117,12 @@ export default class PaymentList extends React.Component {
           value={this.state.value}
           onChange={this.handleChange.bind(this)}
           fullWidth={true}
-          floatingLabelStyle={{color: '#555555'}}
+          labelStyle={{color: '#555555'}}
         >
-          <MenuItem value={null}  primaryText="全部" />
-          <MenuItem value={1} primaryText="已繳款" />
-          <MenuItem value={0} primaryText="未繳款" />
-          <MenuItem value={2} primaryText="已逾期"/>
+          <MenuItem value={null} style={{color: '#555555'}}  primaryText="全部" />
+          <MenuItem value={1} style={{color: '#555555'}} primaryText="已繳款" />
+          <MenuItem value={0} style={{color: '#555555'}} primaryText="未繳款" />
+          <MenuItem value={2} style={{color: '#555555'}} primaryText="已逾期"/>
         </SelectField>
         {this.state.orders.map((order) => this.paymentStatus(order) )}
       </div>
