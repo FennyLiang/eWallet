@@ -8,8 +8,6 @@ import {Card, CardTitle, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 
 
-
-
 export default class PaymentList extends React.Component {
 
   constructor(props){

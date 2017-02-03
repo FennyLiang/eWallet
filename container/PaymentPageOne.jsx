@@ -9,7 +9,6 @@ export default class PaymentPageOne extends React.Component{
     super(props);
   }
 
-
   render(){
 
     return(
