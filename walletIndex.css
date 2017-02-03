@@ -11,6 +11,7 @@
 body {
     margin: 0px;
     padding: 0px;
+
 }
 
 html,body {
@@ -20,10 +21,11 @@ html,body {
 
 .fixedButton {
     position: fixed;
+    display: block;
     bottom: 0;
     left: 0;
     width: 100%;
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden !important;
 }
 
 /*div {*/

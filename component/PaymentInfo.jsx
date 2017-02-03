@@ -81,7 +81,7 @@ export default class PaymentInfo extends React.Component{
         assignColor = '#b3dece';
         break;
       case 2:
-        typeTitle = `已逾時`;
+        typeTitle = `已逾期`;
         break;
     }
 

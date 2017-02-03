@@ -3,6 +3,7 @@ import pageStyle from './css'
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import 'whatwg-fetch';
+import indexStyle from '../walletIndex.css';
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 
@@ -86,7 +87,7 @@ export default class PaymentList extends React.Component {
         assignColor = '#b3dece';
       break;
       case 2:
-        typeTitle = `已逾時`;
+        typeTitle = `已逾期`;
       break;
     }
 
@@ -98,7 +99,7 @@ export default class PaymentList extends React.Component {
           <div style={{flex: 1, textAlign: 'right'}}>{order.amount}</div>
         </div>
 
-        <div style={{backgroundColor: assignColor, padding: 10}} onTouchTap={()=>{this.props.onSelect(order.id)}} >
+        <div style={{backgroundColor: assignColor, padding: 10}} onTouchTap={()=>{this.props.onSelect(order.id)}}>
           <span style={{display: 'block', textAlign: 'center', color:'#FFF'}}>{typeTitle}</span>
         </div>
       </div>
@@ -112,12 +113,13 @@ export default class PaymentList extends React.Component {
   render(){
     return(
       <div>
-        <h3 style={pageStyle.title}>我的訂單</h3>
+        <h3 style={pageStyle.titleTwo}>我的訂單</h3>
         <SelectField
           value={this.state.value}
           onChange={this.handleChange.bind(this)}
           fullWidth={true}
           labelStyle={{color: '#555555'}}
+          className={indexStyle.fadeIn}
         >
           <MenuItem value={null} style={{color: '#555555'}}  primaryText="全部" />
           <MenuItem value={1} style={{color: '#555555'}} primaryText="已繳款" />

@@ -3,6 +3,7 @@ import pageStyle from './css'
 import {Card, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import indexStyle from '../walletIndex.css';
 
 const prices = [300,500,1000,'其他'];
 
@@ -52,12 +53,12 @@ export default class AddMoney extends React.Component {
     return prices.map((price) => {
         return (
           <div style={{ width: parseInt((screen.width-40)/prices.length)-10,
-                        height: parseInt((screen.height)/11), float: 'left',
+                        height: parseInt((screen.height)/13), float: 'left',
                         paddingLeft: 5,paddingRight: 5, textAlign: 'center',
-                        }}>
+                        paddingBottom: 0}}>
             <Card style={this.state.selected == price ? selectedStyle : ''}
                   onTouchTap={()=>{this.setState({selected: price})}}>
-              <CardText style={{ lineHeight: '1.1em', paddingBottom: 0}} color={'#555555'}>{price}</CardText>
+              <CardText style={{ lineHeight: '1.1em', paddingBottom: 5}} color={'#555555'}>{price}</CardText>
             </Card>
           </div>
         )
@@ -101,6 +102,7 @@ export default class AddMoney extends React.Component {
         <RaisedButton fullWidth={true}
                       primary={true}
                       label="加值WeMo錢包"
+                      style={{marginBottom: 15}}
                       onTouchTap={this.validationPrice.bind(this)}/>
 
         <form  id="auto-submit-form" style={{display: 'none'}} action="https://briareus-qat.wemoscooter.com/api/wallet/orders" method="post">
