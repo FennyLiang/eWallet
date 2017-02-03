@@ -200,8 +200,8 @@ export default class PaymentInfo extends React.Component{
         <div>
           {this.showPaymentTitle(this.state.order)}
           {this.showPayDetail(this.state.order)}
-          <RaisedButton style={{position: 'fixed', bottom: 0, left: 0, width: '100%'}}
-                        className={indexStyle.RaisedButton_noRadius}
+          <RaisedButton
+                        className={indexStyle.fixedButton}
                         fullWidth={true}
                         primary={true}
                         label="返回"

@@ -18,9 +18,17 @@ html,body {
     color: #9E9E9E
 }
 
-div {
-    transition: border ease-in-out 0s ;
+.fixedButton {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
 }
+
+/*div {*/
+    /*transition: border ease-in-out 0s ;*/
+/*}*/
 
 .RaisedButton_noRadius, .RaisedButton_noRadius div, .RaisedButton_noRadius button {
     border-radius: 0 !important;

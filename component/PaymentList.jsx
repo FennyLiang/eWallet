@@ -124,7 +124,7 @@ export default class PaymentList extends React.Component {
           <MenuItem value={0} style={{color: '#555555'}} primaryText="未繳款" />
           <MenuItem value={2} style={{color: '#555555'}} primaryText="已逾期"/>
         </SelectField>
-        {this.state.orders.map((order) => this.paymentStatus(order) )}
+        {this.state.orders.map((order) => this.paymentStatus(order))}
       </div>
 
 
