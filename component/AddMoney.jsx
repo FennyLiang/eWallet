@@ -55,7 +55,7 @@ export default class AddMoney extends React.Component {
           <div style={{ width: parseInt((screen.width-40)/prices.length)-10,
                         height: parseInt((screen.height)/13), float: 'left',
                         paddingLeft: 5,paddingRight: 5, textAlign: 'center',
-                        paddingBottom: 0}}>
+                        }}>
             <Card style={this.state.selected == price ? selectedStyle : ''}
                   onTouchTap={()=>{this.setState({selected: price})}}>
               <CardText style={{ lineHeight: '1.1em', paddingBottom: 5}} color={'#555555'}>{price}</CardText>
@@ -102,7 +102,7 @@ export default class AddMoney extends React.Component {
         <RaisedButton fullWidth={true}
                       primary={true}
                       label="加值WeMo錢包"
-                      style={{marginBottom: 15}}
+                      style={{marginBottom: 15, marginTop: 10}}
                       onTouchTap={this.validationPrice.bind(this)}/>
 
         <form  id="auto-submit-form" style={{display: 'none'}} action="https://briareus-qat.wemoscooter.com/api/wallet/orders" method="post">

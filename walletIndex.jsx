@@ -29,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div style={ {...this.fadeinStyle} } className={indexStyle.fadeIn} >
+        <div>
           <PaymentRouter/>
         </div>
       </MuiThemeProvider>

@@ -56,7 +56,7 @@ export default class PaymentList extends React.Component {
     // .then(res => res.json())
     // .then(console.log);
     const {result, orders} = await resp.json();
-    console.log(result);
+    // console.log(result);
     this.setState({orders: orders})
 
     }
@@ -119,7 +119,6 @@ export default class PaymentList extends React.Component {
           onChange={this.handleChange.bind(this)}
           fullWidth={true}
           labelStyle={{color: '#555555'}}
-          className={indexStyle.fadeIn}
         >
           <MenuItem value={null} style={{color: '#555555'}}  primaryText="全部" />
           <MenuItem value={1} style={{color: '#555555'}} primaryText="已繳款" />
