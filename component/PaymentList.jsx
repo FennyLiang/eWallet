@@ -54,7 +54,7 @@ export default class PaymentList extends React.Component {
     // .then(res => res.json())
     // .then(console.log);
     const {result, orders} = await resp.json();
-    // console.log(result);
+    console.log(orders);
     this.setState({orders: orders})
 
     }
@@ -90,7 +90,8 @@ export default class PaymentList extends React.Component {
     }
 
     return (
-      <div style={{margin: '20px 0px 20px 0px', border: '#ccc solid 0.1px'}}>
+      <div style={{margin: '20px 0px 20px 0px', border: '#ccc solid 0.1px', animationDelay: 0.7, opacity:1}}
+           className={indexStyle.fadeIn}>
         <div style={{display: 'flex', flexDirection: 'raw', padding: 10}}>
           <div style={{flex: 1}}>{order.createDate.substring(0,10)}</div>
           <div style={{flex: 1, textAlign: 'center'}}>{type[order.paymentType]}</div>
