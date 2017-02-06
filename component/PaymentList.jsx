@@ -77,7 +77,7 @@ export default class PaymentList extends React.Component {
 
     switch(order.status){
       case 0:
-        typeTitle = `請於${order.dueDate.substring(0,10)}完成繳款`;
+        typeTitle = `請於${order.dueDate.substring(0,16)}前完成繳款`;
         assignColor = '#4ac6e8';
       break;
       case 1:
